@@ -189,23 +189,23 @@
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let achievementContainer = select('.achievement-container');
-    if (achievementContainer) {
-      let achievementIsotope = new Isotope(achievementContainer, {
-        itemSelector: '.achievement-item',
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
       });
 
-      let achievementFilters = select('#achievement-flters li', true);
+      let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#achievement-flters li', function(e) {
+      on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
-        achievementFilters.forEach(function(el) {
+        portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
 
-        achievementIsotope.arrange({
+        portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
       }, true);
@@ -214,25 +214,25 @@
   });
 
   /**
-   * Initiate achievement lightbox 
+   * Initiate portfolio lightbox 
    */
-  const achievementLightbox = GLightbox({
-    selector: '.achievement-lightbox'
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
   });
 
   /**
-   * Initiate achievement details lightbox 
+   * Initiate portfolio details lightbox 
    */
-  const achievementDetailsLightbox = GLightbox({
-    selector: '.achievement-details-lightbox',
+  const portfolioDetailsLightbox = GLightbox({
+    selector: '.portfolio-details-lightbox',
     width: '90%',
     height: '90vh'
   });
 
   /**
-   * achievement details slider
+   * portfolio details slider
    */
-  new Swiper('.achievement-details-slider', {
+  new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: true,
     autoplay: {
