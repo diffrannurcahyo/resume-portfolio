@@ -940,6 +940,7 @@ section .container {
   top: 0;
   bottom: 0;
   overflow-y: auto;
+  
 }
 
 .portfolio-details .container {
@@ -982,6 +983,12 @@ section .container {
   .portfolio-details .portfolio-info {
     padding-top: 20px;
   }
+}
+
+.portfolio-details .swiper-slide img {
+  width: 100%;
+  height: auto; /* Preserve aspect ratio */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
 .portfolio-details .swiper-pagination {
