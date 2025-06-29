@@ -251,4 +251,42 @@
    */
   new PureCounter();
 
+  /**
+ * Language switch functionality
+ */
+const translations = {
+  id: {
+    home: "Beranda",
+    about: "Tentang Saya",
+    resume: "Resume",
+    activity: "Aktivitas",
+    contact: "Kontak",
+  },
+  en: {
+    home: "Home",
+    about: "About Me",
+    resume: "Resume",
+    activity: "Activity",
+    contact: "Contact",
+  },
+};
+
+function setLanguage(lang) {
+  const navLinks = document.querySelectorAll("#navbar .nav-link");
+  navLinks.forEach((link) => {
+    const section = link.getAttribute("href").substring(1);
+    if (translations[lang][section]) {
+      link.textContent = translations[lang][section];
+    }
+  });
+}
+
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const lang = button.getAttribute("data-lang");
+    setLanguage(lang);
+  });
+});
+
+
 })()
