@@ -251,33 +251,4 @@
    */
   new PureCounter();
 
-  // Fungsi untuk toggle tema
-function toggleTheme() {
-  const body = document.body;
-  const themeButton = document.getElementById('theme-toggle');
-
-  // Toggle kelas "dark" pada body
-  body.classList.toggle('dark');
-  const isDarkMode = body.classList.contains('dark');
-
-  // Ubah ikon tombol sesuai mode
-  themeButton.textContent = isDarkMode ? '☀️' : '🌙';
-
-  // Simpan preferensi tema ke localStorage
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-}
-
-// Event listener untuk tombol tema
-document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-
-// Atur tema berdasarkan preferensi sebelumnya
-window.addEventListener('load', () => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-    document.getElementById('theme-toggle').textContent = '☀️';
-  }
-});
-
-
 })()
